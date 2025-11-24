@@ -1,11 +1,11 @@
-# 🌐My Portfolio Website
+# 🌐 My Portfolio Website
 
 This is my personal portfolio website showcasing my projects, skills and experiences as Frontend Developer. The goal of this site is to highlight my work and provide an easy way to contact me.
 
-## 🚀Live Demo
+## 🚀 Live Demo
 🔗 [View Portfolio](https://your-portfolio-link.com)
 
-## ✨Features
+## ✨ Features
 - Projects showcase with Details
 - About me Section
 - Contact Form
