@@ -56,33 +56,3 @@ window.addEventListener("scroll",()=>{
     contactForm.reset();
   });
 
-// //Q1.
-//   let nums = [1,2,3];
-//   let double = nums.map(n=>n*2);
-//   console.log(double);
-// //Q2.
-//   let newnum = [3,6,8,9]
-//   let filter = newnum.filter(n=> n>5);
-//   console.log(filter)
-// //Q3.
-//   const user = { name: "khushi", age: 29 };
-//   const newobj = {user};
-//   console.log(newobj);
-// //Q4.
-//   const product = {title: "phone",price: 12000};
-//   const {title,price} = product;
-//   console.log(product);
-// //Q5.
-//   async function getData(){
-//     const result = await fetch("https://jsonplaceholder.typicode.com/users");
-//     const data = await result.json();
-//     data.forEach(user => {
-//       console.log(user.name);
-//     });
-    
-//   };
-//   getData();
-// //Q6.
-//   let newnums = [1,2,3];
-//   const newarr = [newnums];
-//   console.log(newarr);
