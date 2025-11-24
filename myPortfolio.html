@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <p>Khushi's Portfolio</p>
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#Contact">Contact</a></li>
+                <button id="signupBtn">Sign Up</button>
+            </ul>
+        </nav>
+    </header>
+   
+        <section id="Home">
+            <div class="home-content">
+              <h1>Hi, I'm <span class="highlight">Khushi Singh</span></h1>
+              <h2 class="typing-text"></h2>
+              <p>Frontend Developer | Web Designer | Coder</p>
+              <a href="#projects" class="btn">View My Work</a>
+            </div>
+        </section>
+        <section id="About">
+            <div class="about-container">
+                <div class="about-img">
+                    <img src="images/bg.png" alt="Khushi Singh">
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>Hi, I'm <strong>Khushi Singh</strong>, a passionate B.Sc. Computer Science student and aspiring
+                    <strong>Full Stack Developer</strong>.I love creating clean, responsive, and interactive websites using HTML, CSS, JavaScript.</p>
+                    <p>I'm Currently learning advanced web development and improving my problem-solving skills with DSA in Java.
+                        My goal is to work at a top product-based company while building projects that help people.
+                    </p> 
+                    <button>Download Resume</button> 
+                </div>
+            </div>
+        </section>
+        <section id="Skills">
+            <h2>My Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <p>HTML</p>
+                    <div class="progress-bar">
+                        <div class="progress html"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>CSS</p>
+                    <div class="progress-bar">
+                        <div class="progress css"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>JavaScript</p>
+                    <div class="progress-bar">
+                        <div class="progress js"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>React</p>
+                    <div class="progress-bar">
+                        <div class="progress react"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>Git & GitHub</p>
+                    <div class="progress-bar">
+                        <div class="progress git"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>SQL</p>
+                    <div class="progress-bar">
+                        <div class="progress SQL"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="Projects">
+            <h2>My Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <img src="img/proj.jpg" alt="Portfolio Website">
+                    <h3>Portfolio Website</h3>
+                    <p>My Personal Portfolio Website built from scratch to showcase my work and skills.</p>
+                    <a href="https://github.com/yourusername/PortfolioWebsite">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <img src="img/proj.jpg" alt="Tic Tac Toe Game">
+                    <h3>Tic Tac Toe Game</h3>
+                    <p>A fun and interactive Tic Tac Toe Game built using HTML, CSS, JavaScript.</p>
+                    <a href="https://github.com/yourusername/tic-tac-toe">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <img src="img/proj.jpg" alt="CSS Position Types">
+                    <h3>CSS Position Playground</h3>
+                    <p>An interactive demo that explains CSS Position types usually with Hover effects.</p>
+                    <a href="https://github.com/yourusername/CSS-Position-Playground">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+        <section id="Contact"> 
+             <h2>Contact Me</h2>
+             <p>I'd love to connect with you! Fill out the form below or reach me through my socials.</p>
+             
+             <form>
+               <input type="text" placeholder="Your Name" required>
+               <input type="email" placeholder="Your Email" required>
+               <textarea placeholder="Your Message" rows="5" required></textarea>
+               <button type="submit">Send Message</button>
+             </form>
+           
+             <div class="socials">
+               <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+               <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+               <a href="mailto:youremail@gmail.com">Email</a>
+             </div>
+        </section>
+    
+    <footer>
+        <p>&copy; 2025 Khushi Singh. All rights reserved.</p>
+    </footer>
+<div class="signup-modal" id="signupModal">
+  <div class="signup-content">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" id="name" placeholder="Enter your name" required>
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <input type="password" id="password" placeholder="Enter your password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <button id="closeModal">Close</button>
+  </div>
+</div>
+    <script src="script.js"></script>
+
+</body>
+</html>
