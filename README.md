@@ -6,10 +6,10 @@ This is my personal portfolio website showcasing my projects, skills and experie
 🔗 [View Portfolio](https://your-portfolio-link.com)
 
 ## ✨Features
--Projects showcase with Details
--About me Section
--Contact Form
--Smooth animinations & Modern UI
+- Projects showcase with Details
+- About me Section
+- Contact Form
+- Smooth animinations & Modern UI
 
 ## 🔥 Installation
 ```bash
