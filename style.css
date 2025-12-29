@@ -15,6 +15,9 @@ header{
     background-color: #222;
     color: white;
     padding: 15px 40px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 nav{
     display: flex;
@@ -61,7 +64,7 @@ section{
 }
 
 .highlight {
-  color: #00adb5;
+  color: #0097c5;
 }
 
 .home-content h1 {
@@ -83,7 +86,7 @@ section{
 .btn {
   display: inline-block;
   margin-top: 25px;
-  background: #00adb5;
+  background: #00d0ff;
   color: white;
   padding: 10px 25px;
   border-radius: 25px;
@@ -92,7 +95,7 @@ section{
 }
 
 .btn:hover {
-  background: #007b83;
+  background: #00b8d4;
 }
 #About{
     padding: 80px 10%;
@@ -120,11 +123,12 @@ section{
 }
 .about-text h2{
     font-size: 2rem;
-    color: #007b83;
+    color: #0099c8;
     margin-bottom: 20px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.327);
 }
 .about-text button{
-    background-color: #00bcd4;
+    background-color: #0098d4;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -144,8 +148,9 @@ section{
 }
 #Skills h2{
     font-size: 2rem;
-    color: #007b83;
+    color: #008ecb;
     margin-bottom: 50px;
+    text-shadow: 1px 4px 5px rgba(0, 0, 0, 0.462);
 }
 .skills-container{
     max-width: 700px;
@@ -160,35 +165,53 @@ section{
     margin-bottom: 8px;
 }
 .progress-bar{
-    background-color: #ddd;
+    width: 100%;
+    background-color: #ffffff;
     height: 10px;
     border-radius: 5px;
     overflow: hidden;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.293);
 }
-progress{
-    height: 10px;
+.progress{
+    height: 100%;
+    width: 0%;
     border-radius: 5px;
-    transition: width 1s ease-in-out;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.293);
+    animation: fill 1.2s ease-in-out forwards;
 }
-.html{width: 90%; background-color: #f16529;}
-.css{width: 85%; background-color: #2965f1;}
-.js{width: 75%; background-color: #f0db4f;}
-.react{width: 70%; background-color: #61dafb;}
-.git{width: 80%; background-color: #f1502f;}
+      .html{width: 90%; background-color: #f77e14;}
+      .css{width: 85%; background-color: #ff0059;}
+      .js{width: 75%; background-color: #ffdf0c;}
+      .react{width: 30%; background-color: #0ecbff;}
+      .Java{width: 70%; background-color: #82ee0e;}
+      .Spring_Boot{width: 45%; background-color: #0077ff;}
 
 @keyframes fill{
-    from{width: 0;}
+    from{
+      width: 0;
+    }
+    to{
+      .html{width: 90%; background-color: #f77e14;}
+      .css{width: 85%; background-color: #ff0059;}
+      .js{width: 75%; background-color: #ffdf0c;}
+      .react{width: 30%; background-color: #0ecbff;}
+      .Java{width: 70%; background-color: #82ee0e;}
+      .Spring_Boot{width: 45%; background-color: #0077ff;}
+    }
 }
 
 #Projects{
     padding: 80px 10%;
     background-color: #fff;
     text-align: center;
+    height: 760px;
 }
-.projects h2{
+#Projects h2{
     font-size: 2rem;
-    color: #007b83;
+    color: #009ed3;
     margin-bottom: 50px;
+    margin-right: 40px;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.338);
 }
 .projects-container{
     display: grid;
@@ -207,11 +230,11 @@ progress{
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 .project-card img {
-  width: 100%;
-  height: 180px;
+  width: 80%;
+  height: 160px;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .project-card h3 {
@@ -235,7 +258,7 @@ progress{
 }
 
 .project-card a:hover {
-  background-color: #00bcd4;
+  background-color: #0094d4;
 }
 /* 🌸 CONTACT SECTION BEAUTIFICATION */
 #Contact {
@@ -244,31 +267,38 @@ progress{
   padding: 100px 20px;
   text-align: center;
   font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 #Contact h2 {
   font-size: 2.5rem;
-  color: #00bcd4;
+  color: #42c9ff;
   margin-bottom: 15px;
+  text-shadow: 2px 5px 8px rgba(0, 16, 26, 0.586);
 }
 
 #Contact p {
   color: #ccc;
   font-size: 1.1rem;
   max-width: 600px;
-  margin: 0 auto 40px;
+  margin: 0 auto 25px;
   line-height: 1.6;
+  white-space: nowrap;
 }
 
 /* 💎 Glass-style Form */
 #Contact form {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(101, 101, 101, 0.1);
   backdrop-filter: blur(12px);
   border-radius: 12px;
   padding: 30px;
   max-width: 400px;
-  margin: 0 auto 40px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  margin: 0 auto 20px;
+  box-shadow: 0 0 15px rgba(80, 80, 80, 0.1);
+  border: 1px solid rgb(13, 13, 13);
 }
 
 #Contact input,
@@ -290,7 +320,7 @@ progress{
 }
 
 #Contact button {
-  background-color: #00bcd4;
+  background-color: #0098d4;
   color: white;
   padding: 12px 18px;
   border: none;
@@ -301,7 +331,7 @@ progress{
 }
 
 #Contact button:hover {
-  background-color: #5fecff;
+  background-color: #5fbcff;
   transform: scale(1.05);
 }
 
@@ -313,7 +343,7 @@ progress{
 }
 
 .socials a {
-  color: #2ce6fe;
+  color: #2cd4fe;
   font-weight: 600;
   text-decoration: none;
   font-size: 1.1rem;
@@ -335,6 +365,9 @@ footer {
   font-size: 0.9rem;
   letter-spacing: 0.5px;
   border-top: 1px solid #222;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 
@@ -354,25 +387,20 @@ footer {
   color: #fff;
 }
 
-footer {
-  background-color: #000;
-  color: #aaa;
-  text-align: center;
-  padding: 15px 0;
-  font-size: 0.9rem;
-}
 #signupBtn {
   background-color: #1acaff;
   color: white;
+  font-size: medium;
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 #signupBtn:hover {
-  background-color: #0092a5;
+  background-color: #1acaffea;
+  transform: scale(1.03);
 }
 
 .signup-modal {
@@ -391,7 +419,7 @@ footer {
   background: white;
   padding: 30px;
   border-radius: 10px;
-  width: 320px;
+  width: 380px;
   text-align: center;
 }
 
@@ -405,15 +433,16 @@ footer {
   padding: 10px;
   margin: 10px 0;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #9a9999;
 }
 
 .signup-content button {
   background-color: #0096bf;
   color: white;
+  width: 100%;
   border: none;
   padding: 10px;
-  margin: 10px;
+  margin: 10px 0;
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s ease;
