@@ -37,7 +37,9 @@ Portfolio-Website/
 └── README.md
 ```
 
-## 🚀 Live Demo
+## 🌐 Live Project
+
+- 🔗 Live Demo: https://khushi-singh-dev.github.io/My_Portfolio/
 
 🔗 **GitHub Repository:** [https://github.com/khushi-singh-dev/My_Portfolio](https://github.com/khushi-singh-dev/My_Portfolio)
 
