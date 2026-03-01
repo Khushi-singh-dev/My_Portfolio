@@ -451,6 +451,23 @@ footer {
   .menu-icon::after {
     content: "";
   }
+  .achievement-card {
+    padding: 20px;
+  }
+
+  .achievements h2 {
+    font-size: 2rem;
+  }
+
+  .achievement-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .buttons a {
+    display: block;
+    margin: 8px auto;
+    width: 80%;
+  }
   #signupBtn {
     background: linear-gradient(135deg, #00d0ff, #0077ff);
     color: white;
