@@ -41,7 +41,7 @@ nav a {
   transition: color 0.3s;
 }
 nav a:hover {
-  color: #00ffcc;
+  color: #2575fc;
 }
 #signupBtn {
   background: linear-gradient(135deg, #00c6ff, #008ecb);
@@ -110,7 +110,7 @@ section {
 .btn {
   display: inline-block;
   margin-top: 25px;
-  background: #0091c6;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;
   padding: 10px 25px;
   border-radius: 25px;
@@ -118,7 +118,7 @@ section {
   transition: 0.3s;
 }
 .btn:hover {
-  background: #00a4e0;
+  transform: scale(1.1);
 }
 
 /* -------- ABOUT -------- */
@@ -139,7 +139,7 @@ section {
   height: 250px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #00bcd4;
+  border: 4px solid #008ecb;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 .about-text {
@@ -147,13 +147,13 @@ section {
   min-width: 300px;
 }
 .about-text h2 {
-  font-size: 2rem;
-  color: #0099c8;
+  font-size: 2.5rem;
+  color: #5b3df5;
   margin-bottom: 20px;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 }
 .about-text button {
-  background-color: #0098d4;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -164,7 +164,7 @@ section {
   margin-top: 10px;
 }
 .about-text button:hover {
-  background-color: #21b1ff;
+  transform: scale(1.1);
 }
 
 /* -------- SKILLS -------- */
@@ -174,7 +174,7 @@ section {
   text-align: center;
 }
 #Skills h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #008ecb;
   margin-bottom: 50px;
   text-shadow: 1px 4px 5px rgba(0, 0, 0, 0.3);
@@ -247,15 +247,15 @@ section {
   text-align: center;
 }
 #Projects h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #009ed3;
   margin-bottom: 50px;
-  padding-right: 55px;
+  padding-right: 20px;
   text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.33);
 }
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(1, 1fr);
   gap: 30px;
 }
 .project-card {
@@ -297,6 +297,75 @@ section {
 }
 .project-card a:hover {
   background-color: #0094d4;
+}
+/* achievements */
+
+#achievements {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #f5f7ff, #eef1ff);
+  text-align: center;
+}
+
+#achievements h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #009ed3;
+}
+
+.achievement-card {
+  max-width: 850px;
+  margin: auto;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.achievement-card:hover {
+  transform: translateY(-8px);
+}
+
+.achievement-top h3 {
+  font-size: 1.6rem;
+  color: #5b3df5;
+  margin-bottom: 10px;
+}
+
+.achievement-info {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.achievement-points {
+  text-align: left;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+.achievement-points li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.achievement-buttons {
+  margin-top: 20px;
+}
+
+.achievement-buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.achievement-buttons a:hover {
+  transform: scale(1.05);
 }
 
 /* -------- CONTACT -------- */
@@ -439,7 +508,7 @@ footer {
     z-index: 1001;
     position: fixed;
     top: -4px;
-    left: 320px;
+    left: 300px;
     color: #fff;
     background: #222;
     padding: 8px 12px;
@@ -529,7 +598,8 @@ footer {
   }
 
   .about-container,
-  .projects-container {
+  .projects-container,
+  .achievements {
     flex-direction: column;
     align-items: center;
   }
