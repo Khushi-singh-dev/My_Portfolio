@@ -118,7 +118,11 @@ section {
   transition: 0.3s;
 }
 .btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
+}
+
+.btn:active{
+  transform: scale(0.9);
 }
 
 /* -------- ABOUT -------- */
@@ -211,11 +215,11 @@ section {
   background-color: #f77e14;
 }
 .progress.css {
-  width: 85%;
-  background-color: #ff0059;
+  width: 89%;
+  background-color: #ff007b;
 }
 .progress.js {
-  width: 75%;
+  width: 80%;
   background-color: #ffdf0c;
 }
 .progress.react {
@@ -227,8 +231,24 @@ section {
   background-color: #82ee0e;
 }
 .progress.springboot {
-  width: 45%;
+  width: 25%;
   background-color: #0077ff;
+}
+.progress.gitandgithub {
+  width: 60%;
+  background-color: #333;
+}
+.progress.mysql {
+  width: 85%;
+  background-color: #ff2727;
+}
+.progress.bootstrap {
+  width: 75%;
+  background-color: #6500fc;
+}
+.progress.python {
+  width: 70%;
+  background-color: #09ff00;
 }
 
 @keyframes fill {
