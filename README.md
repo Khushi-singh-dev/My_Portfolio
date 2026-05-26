@@ -13,10 +13,10 @@ https://khushi-singh-dev.github.io/My_Portfolio/
 
 # 📸 Preview
 
-![Portfolio Preview](images/1st_rank_website.jpg)
+![Portfolio Preview](images/myportfolioimg.jpg)
 
 ```md
-![Portfolio Preview](images/1st_rank_website.jpg)
+![Portfolio Preview](myportfolioimg.jpg)
 ```
 
 ---
