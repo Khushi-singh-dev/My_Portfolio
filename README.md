@@ -1,4 +1,3 @@
-````md id="z9p4wt"
 # 🌐 Personal Portfolio Website
 
 A modern, responsive, and visually appealing Personal Portfolio Website built using HTML, CSS, and JavaScript to showcase my skills, projects, and journey as a Computer Science student and aspiring Java Full Stack Developer.
@@ -14,10 +13,10 @@ https://khushi-singh-dev.github.io/My_Portfolio/
 
 # 📸 Preview
 
-(Add your portfolio screenshot here)
+![Portfolio Preview](images/1st_rank_website.jpg)
 
 ```md
-![Portfolio Preview](screenshot.png)
+![Portfolio Preview](images/1st_rank_website.jpg)
 ```
 
 ---
@@ -119,6 +118,8 @@ Some projects showcased in this portfolio include:
 - 🌟 Random Quote Generator
 - ✅ To-Do List App
 - 🍔 Food Delivery Website
+- 🌄 MahaTour Website
+- 🧮 Calculator Website
 - 🌤️ Weather App (Upcoming)
 - 📝 Notes App (Upcoming)
 
@@ -179,4 +180,4 @@ If you like this project:
 
 ✅ Completed  
 🚀 Continuously improving and adding new features
-````
+
