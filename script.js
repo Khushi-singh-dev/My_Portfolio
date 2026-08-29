@@ -15,6 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menuIcon) menuIcon.setAttribute("aria-expanded", expanded ? "true" : "false");
   }
 
+  // Helper: toggle body scroll
+  function toggleBodyScroll(disable) {
+    if (disable) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+  }
+
   // Hamburger Menu toggle
   if (menuIcon && navLinks) {
     menuIcon.addEventListener("click", () => {
@@ -119,22 +128,37 @@ document.addEventListener("DOMContentLoaded", () => {
   // Sign Up Modal (guard existence)
   if (signupBtn && signupModal && closeModal && signupForm) {
     signupBtn.addEventListener("click", () => {
-      signupModal.style.display = "flex";
+      signupModal.classList.add("active");
       signupModal.setAttribute("aria-hidden", "false");
+      toggleBodyScroll(true);
       // focus first input
       const first = signupModal.querySelector("input");
       if (first) first.focus();
     });
+    
     closeModal.addEventListener("click", () => {
-      signupModal.style.display = "none";
+      signupModal.classList.remove("active");
       signupModal.setAttribute("aria-hidden", "true");
+      toggleBodyScroll(false);
       signupForm.reset();
     });
+    
+    // Close modal when clicking outside (on the background)
+    signupModal.addEventListener("click", (e) => {
+      if (e.target === signupModal) {
+        signupModal.classList.remove("active");
+        signupModal.setAttribute("aria-hidden", "true");
+        toggleBodyScroll(false);
+        signupForm.reset();
+      }
+    });
+    
     signupForm.addEventListener("submit", e => {
       e.preventDefault();
       alert("Sign Up Successful! 🎉");
-      signupModal.style.display = "none";
+      signupModal.classList.remove("active");
       signupModal.setAttribute("aria-hidden", "true");
+      toggleBodyScroll(false);
       signupForm.reset();
     });
   }
