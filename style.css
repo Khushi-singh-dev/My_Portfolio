@@ -223,7 +223,7 @@ section {
   background-color: #ffdf0c;
 }
 .progress.react {
-  width: 30%;
+  width: 80%;
   background-color: #0ecbff;
 }
 .progress.java {
@@ -247,6 +247,10 @@ section {
   background-color: #6500fc;
 }
 .progress.python {
+  width: 70%;
+  background-color: #09ff00;
+}
+.progress.django {
   width: 70%;
   background-color: #09ff00;
 }
