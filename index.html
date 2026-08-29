@@ -23,7 +23,7 @@
   <header>
     <nav role="navigation" aria-label="Main navigation">
       <p class="brand">Khushi's Portfolio</p>
-      <button class="menu-icon" aria-expanded="false" aria-controls="primary-navigation" title="Toggle menu">&#9776;</button>
+      <button class="menu-icon" aria-expanded="false" aria-controls="primary-navigation" title="Toggle menu">☰</button>
 
       <ul id="primary-navigation" class="nav-links">
         <li><a href="#home">Home</a></li>
@@ -121,32 +121,40 @@
           <img src="images/yumlicious.jpg" alt="Food Delivery Website screenshot" loading="lazy">
           <h3>Food Delivery Website</h3>
           <p>Interactive Food Delivery Website built using HTML &amp; CSS.</p>
-          <a href="https://github.com/Khushi-singh-dev/Food_Delivery_Website" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          <a href="https://khushi-singh-dev.github.io/Food_Delivery_Website/" target="_blank" rel="noopener noreferrer" class="btn">Live Demo</a>
+          <div class="project-buttons">
+            <a href="https://github.com/Khushi-singh-dev/Food_Delivery_Website" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View on GitHub</a>
+            <a href="https://khushi-singh-dev.github.io/Food_Delivery_Website/" target="_blank" rel="noopener noreferrer" class="btn primary">Live Demo</a>
+          </div>
         </article>
 
         <article class="project-card">
           <img src="images/1st_rank_website.jpg" alt="MahaTour Website screenshot" loading="lazy">
           <h3>MahaTour Website</h3>
           <p>Interactive MahaTour Website built using HTML &amp; CSS.</p>
-          <a href="https://github.com/Khushi-singh-dev/MahaTour" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          <a href="https://khushi-singh-dev.github.io/MahaTour/" target="_blank" rel="noopener noreferrer" class="btn">Live Demo</a>
+          <div class="project-buttons">
+            <a href="https://github.com/Khushi-singh-dev/MahaTour" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View on GitHub</a>
+            <a href="https://khushi-singh-dev.github.io/MahaTour/" target="_blank" rel="noopener noreferrer" class="btn primary">Live Demo</a>
+          </div>
         </article>
 
         <article class="project-card">
           <img src="images/random-quote-gen.jpg" alt="Random Quote Generator screenshot" loading="lazy">
           <h3>Random Quote Generator</h3>
           <p>Interactive Random Quote Generator built using HTML, CSS &amp; JS (API Integration).</p>
-          <a href="https://github.com/Khushi-singh-dev/random-quote-generator" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          <a href="https://khushi-singh-dev.github.io/random-quote-generator/" target="_blank" rel="noopener noreferrer" class="btn">Live Demo</a>
+          <div class="project-buttons">
+            <a href="https://github.com/Khushi-singh-dev/random-quote-generator" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View on GitHub</a>
+            <a href="https://khushi-singh-dev.github.io/random-quote-generator/" target="_blank" rel="noopener noreferrer" class="btn primary">Live Demo</a>
+          </div>
         </article>
 
         <article class="project-card">
           <img src="images/TodoList.jpg" alt="Todo List app screenshot" loading="lazy">
           <h3>Todo List</h3>
           <p>Interactive Todo List built using HTML, CSS &amp; JS.</p>
-          <a href="https://github.com/Khushi-singh-dev/Todo-list-app" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          <a href="https://khushi-singh-dev.github.io/Todo-list-app/" target="_blank" rel="noopener noreferrer" class="btn">Live Demo</a>
+          <div class="project-buttons">
+            <a href="https://github.com/Khushi-singh-dev/Todo-list-app" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View on GitHub</a>
+            <a href="https://khushi-singh-dev.github.io/Todo-list-app/" target="_blank" rel="noopener noreferrer" class="btn primary">Live Demo</a>
+          </div>
         </article>
       </div>
     </section>
@@ -170,8 +178,8 @@
         </ul>
 
         <div class="achievement-buttons">
-          <a href="https://drive.google.com/file/d/1MjhwXmWaeTkrzqZ2K9Q-5sk_XD9NLkfU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">📎 View Certificate</a>
-          <a href="https://khushi-singh-dev.github.io/MahaTour/" target="_blank" rel="noopener noreferrer">📎 View Project</a>
+          <a href="https://drive.google.com/file/d/1MjhwXmWaeTkrzqZ2K9Q-5sk_XD9NLkfU/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📎 View Certificate</a>
+          <a href="https://khushi-singh-dev.github.io/MahaTour/" target="_blank" rel="noopener noreferrer" class="btn primary">📎 View Project</a>
         </div>
       </div>
     </section>
@@ -190,7 +198,7 @@
         <label class="visually-hidden" for="message">Your Message</label>
         <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
 
-        <button type="submit">Send Message</button>
+        <button type="submit" class="btn primary">Send Message</button>
       </form>
 
       <div class="socials" aria-label="Social links">
@@ -219,7 +227,7 @@
         <label class="visually-hidden" for="signup-password">Password</label>
         <input id="signup-password" name="signup-password" type="password" placeholder="Enter your password" required>
 
-        <button type="submit">Sign Up</button>
+        <button type="submit" class="btn primary">Sign Up</button>
       </form>
       <button id="closeModal" aria-label="Close sign up dialog">Close</button>
     </div>
