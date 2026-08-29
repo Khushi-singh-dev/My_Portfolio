@@ -1,238 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Khushi Singh Portfolio</title>
-    <link rel="icon" href="images/bg.png" type="image/png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khushi Singh — Portfolio</title>
+  <meta name="description" content="Khushi Singh — Frontend Developer. Portfolio showcasing projects, skills and contact information.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="images/bg.png" type="image/png">
+  <link rel="preload" href="style.css" as="style">
+  <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://khushi-singh-dev.github.io/My_Portfolio/">
+  <!-- Open Graph (basic) -->
+  <meta property="og:title" content="Khushi Singh — Portfolio">
+  <meta property="og:description" content="Frontend Developer — portfolio showcasing projects and skills.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://khushi-singh-dev.github.io/My_Portfolio/">
+  <!-- Accessibility skip link styles could be in style.css -->
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<header>
-    <nav>
-        <p>Khushi's Portfolio</p>
-        <div class="menu-icon">&#9776;</div>
-        <ul class="nav-links">
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#About">About</a></li>
-            <li><a href="#Skills">Skills</a></li>
-            <li><a href="#Projects">Projects</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#Contact">Contact</a></li>
-            <button id="signupBtn">Sign Up</button>
-        </ul>
+  <header>
+    <nav role="navigation" aria-label="Main navigation">
+      <p class="brand">Khushi's Portfolio</p>
+      <button class="menu-icon" aria-expanded="false" aria-controls="primary-navigation" title="Toggle menu">&#9776;</button>
+
+      <ul id="primary-navigation" class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="signupBtn" aria-haspopup="dialog">Sign Up</button>
+      </div>
     </nav>
-</header>
+  </header>
 
-<section id="Home">
-    <div class="home-content">
-        <h1>Hi, I'm <span class="highlight">Khushi Singh</span></h1>
-        <h2 class="typing-text"></h2>
+  <main id="main" tabindex="-1">
+    <section id="home" aria-labelledby="home-heading">
+      <div class="home-content">
+        <h1 id="home-heading">Hi, I'm <span class="highlight">Khushi Singh</span></h1>
+        <h2 class="typing-text" aria-live="polite"></h2>
         <p>Frontend Developer | Web Designer | Coder</p>
-        <a href="#Projects" class="btn">View My Work</a>
-    </div>
-</section>
+        <a href="#projects" class="btn">View My Work</a>
+      </div>
+    </section>
 
-<section id="About">
-    <div class="about-container">
-        <div class="about-img">
-            <img src="images/Profile_Picture.jpg" alt="Khushi Singh">
-        </div>
+    <section id="about" aria-labelledby="about-heading">
+      <div class="about-container">
+        <figure class="about-img">
+          <img src="images/Profile_Picture.jpg" alt="Khushi Singh portrait" loading="lazy">
+        </figure>
         <div class="about-text">
-            <h2>About Me</h2>
-            <p>Hi, I'm <strong>Khushi Singh</strong>, a passionate B.Sc. Computer Science student and aspiring
+          <h2 id="about-heading">About Me</h2>
+          <p>Hi, I'm <strong>Khushi Singh</strong>, a passionate B.Sc. Computer Science student and aspiring
             <strong>Java Full Stack Developer</strong>. I love creating clean, responsive, and interactive websites using HTML, CSS, and JavaScript.</p>
-            <p>I'm currently learning advanced web development, backend technologies, and improving my problem-solving skills with DSA in Java.
-                My goal is to work at a top product-based company while building projects that help people.
-            </p>
-            <a href="https://drive.google.com/uc?export=download&id=1lrFTx9VXk0i6fky1Gtn4-Yq05NF1nNVw" class="btn" target="_blank">Download Resume</a>
+          <p>I'm currently learning advanced web development, backend technologies, and improving my problem-solving skills with DSA in Java.
+            My goal is to work at a top product-based company while building projects that help people.</p>
+          <a href="https://drive.google.com/uc?export=download&id=1lrFTx9VXk0i6fky1Gtn4-Yq05NF1nNVw" class="btn" target="_blank" rel="noopener noreferrer">Download Resume</a>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section id="Skills">
-    <h2>My Skills</h2>
-    <div class="skills-container">
-        <div class="skill">
-            <p>HTML</p>
-            <div class="progress-bar"><div class="progress html"></div></div>
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">My Skills</h2>
+      <div class="skills-container" role="list">
+        <!-- Each skill is marked up for accessibility -->
+        <div class="skill" role="listitem" aria-label="HTML skill level">
+          <p>HTML</p>
+          <div class="progress-bar" aria-hidden="true"><div class="progress html"></div></div>
         </div>
-        <div class="skill">
-            <p>CSS</p>
-            <div class="progress-bar"><div class="progress css"></div></div>
+        <div class="skill" role="listitem" aria-label="CSS skill level">
+          <p>CSS</p>
+          <div class="progress-bar" aria-hidden="true"><div class="progress css"></div></div>
         </div>
-        <div class="skill">
-            <p>JavaScript</p>
-            <div class="progress-bar"><div class="progress js"></div></div>
+        <div class="skill" role="listitem" aria-label="JavaScript skill level">
+          <p>JavaScript</p>
+          <div class="progress-bar" aria-hidden="true"><div class="progress js"></div></div>
         </div>
-        <div class="skill">
-            <p>React</p>
-            <div class="progress-bar"><div class="progress react"></div></div>
+        <div class="skill" role="listitem" aria-label="React skill level">
+          <p>React</p>
+          <div class="progress-bar" aria-hidden="true"><div class="progress react"></div></div>
         </div>
-        <div class="skill">
-            <p>Java</p>
-            <div class="progress-bar"><div class="progress java"></div></div>
+        <div class="skill" role="listitem" aria-label="Java skill level">
+          <p>Java</p>
+          <div class="progress-bar" aria-hidden="true"><div class="progress java"></div></div>
         </div>
-        <div class="skill">
-            <p>Spring Boot</p>
-            <div class="progress-bar"><div class="progress springboot"></div></div>
+        <div class="skill" role="listitem" aria-label="Spring Boot skill level">
+          <p>Spring Boot</p>
+          <div class="progress-bar" aria-hidden="true"><div class="progress springboot"></div></div>
         </div>
-        <div class="skill">
-            <p>Git & GitHub</p>
-            <div class="progress-bar"><div class="progress gitandgithub"></div></div>
+        <div class="skill" role="listitem" aria-label="Git and GitHub skill level">
+          <p>Git &amp; GitHub</p>
+          <div class="progress-bar" aria-hidden="true"><div class="progress gitandgithub"></div></div>
         </div>
-        <div class="skill">
-            <p>MySQL</p>
-            <div class="progress-bar"><div class="progress mysql"></div></div>
+        <div class="skill" role="listitem" aria-label="MySQL skill level">
+          <p>MySQL</p>
+          <div class="progress-bar" aria-hidden="true"><div class="progress mysql"></div></div>
         </div>
-        <div class="skill">
-            <p>Bootstrap</p>
-            <div class="progress-bar"><div class="progress bootstrap"></div></div>
+        <div class="skill" role="listitem" aria-label="Bootstrap skill level">
+          <p>Bootstrap</p>
+          <div class="progress-bar" aria-hidden="true"><div class="progress bootstrap"></div></div>
         </div>
-        <div class="skill">
-            <p>Python</p>
-            <div class="progress-bar"><div class="progress python"></div></div>
+        <div class="skill" role="listitem" aria-label="Python skill level">
+          <p>Python</p>
+          <div class="progress-bar" aria-hidden="true"><div class="progress python"></div></div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section id="Projects">
-    <h2>My Projects</h2>
-    <div class="projects-container">
-        <div class="project-card">
-            <img src="images/myportfolioimg.jpg" alt="Portfolio Website">
-            <h3>Portfolio Website</h3>
-            <p>My Personal Portfolio Website built from scratch to showcase my work and skills.</p>
-            <a href="https://github.com/khushi-singh-dev/My_Portfolio" target="_blank">View on GitHub</a>
-            <a href="https://khushi-singh-dev.github.io/My_Portfolio/" 
-           target="_blank" 
-           class="btn">
-           Live Demo
-        </a>
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">My Projects</h2>
+      <div class="projects-container">
+        <article class="project-card">
+          <img src="images/myportfolioimg.jpg" alt="Screenshot of Portfolio Website" loading="lazy">
+          <h3>Portfolio Website</h3>
+          <p>My Personal Portfolio Website built from scratch to showcase my work and skills.</p>
+          <a href="https://github.com/Khushi-singh-dev/My_Portfolio" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a href="https://khushi-singh-dev.github.io/My_Portfolio/" target="_blank" rel="noopener noreferrer" class="btn">Live Demo</a>
+        </article>
+
+        <article class="project-card">
+          <img src="images/yumlicious.jpg" alt="Food Delivery Website screenshot" loading="lazy">
+          <h3>Food Delivery Website</h3>
+          <p>Interactive Food Delivery Website built using HTML &amp; CSS.</p>
+          <a href="https://github.com/Khushi-singh-dev/Food_Delivery_Website" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a href="https://khushi-singh-dev.github.io/Food_Delivery_Website/" target="_blank" rel="noopener noreferrer" class="btn">Live Demo</a>
+        </article>
+
+        <article class="project-card">
+          <img src="images/1st_rank_website.jpg" alt="MahaTour Website screenshot" loading="lazy">
+          <h3>MahaTour Website</h3>
+          <p>Interactive MahaTour Website built using HTML &amp; CSS.</p>
+          <a href="https://github.com/Khushi-singh-dev/MahaTour" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a href="https://khushi-singh-dev.github.io/MahaTour/" target="_blank" rel="noopener noreferrer" class="btn">Live Demo</a>
+        </article>
+
+        <article class="project-card">
+          <img src="images/calcProject.jpg" alt="Calculator Website screenshot" loading="lazy">
+          <h3>Calculator Website</h3>
+          <p>Interactive Calculator Website built using HTML, CSS &amp; JS.</p>
+          <a href="https://github.com/Khushi-singh-dev/Calculator-Website" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a href="https://khushi-singh-dev.github.io/Calculator-Website/" target="_blank" rel="noopener noreferrer" class="btn">Live Demo</a>
+        </article>
+
+        <article class="project-card">
+          <img src="images/random-quote-gen.jpg" alt="Random Quote Generator screenshot" loading="lazy">
+          <h3>Random Quote Generator</h3>
+          <p>Interactive Random Quote Generator built using HTML, CSS &amp; JS (API Integration).</p>
+          <a href="https://github.com/Khushi-singh-dev/random-quote-generator" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a href="https://khushi-singh-dev.github.io/random-quote-generator/" target="_blank" rel="noopener noreferrer" class="btn">Live Demo</a>
+        </article>
+
+        <article class="project-card">
+          <img src="images/TodoList.jpg" alt="Todo List app screenshot" loading="lazy">
+          <h3>Todo List</h3>
+          <p>Interactive Todo List built using HTML, CSS &amp; JS.</p>
+          <a href="https://github.com/Khushi-singh-dev/Todo-list-app" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a href="https://khushi-singh-dev.github.io/Todo-list-app/" target="_blank" rel="noopener noreferrer" class="btn">Live Demo</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="achievements" class="achievements" aria-labelledby="achievements-heading">
+      <h2 id="achievements-heading">🏆 Achievements</h2>
+
+      <div class="achievement-card">
+        <div class="achievement-top">
+          <h3>🥇 1st Rank – Web Designing Competition</h3>
         </div>
-        <div class="project-card">
-            <img src="images/yumlicious.jpg" alt="Food Delivery Website">
-            <h3>Food Delivery Website</h3>
-            <p>Interactive Food Delivery Website built using HTML & CSS.</p>
-            <a href="https://github.com/khushi-singh-dev/Food_Delivery_Website" target="_blank">View on GitHub</a>
-            <a href="https://Khushi-singh-dev.github.io/Food_Delivery_Website/" 
-           target="_blank" 
-           class="btn">
-           Live Demo
-        </a>
+
+        <div class="achievement-info">
+          📍 St. John College of Humanities &amp; Sciences <br>
+          📅 February 2026
         </div>
-        <div class="project-card">
-            <img src="images/1st_rank_website.jpg" alt="MahaTour Website">
-            <h3>MahaTour Website</h3>
-            <p>Interactive MahaTour Website built using HTML & CSS.</p>
-            <a href="https://github.com/khushi-singh-dev/MahaTour" target="_blank">View on GitHub</a>
-            <a href="https://Khushi-singh-dev.github.io/MahaTour/" 
-           target="_blank" 
-           class="btn">
-           Live Demo
-        </a>
+
+        <ul class="achievement-points">
+          <li>✔ Designed a responsive and visually appealing website</li>
+          <li>✔ Focused on UI design, layout structure &amp; user experience</li>
+        </ul>
+
+        <div class="achievement-buttons">
+          <a href="https://drive.google.com/file/d/1MjhwXmWaeTkrzqZ2K9Q-5sk_XD9NLkfU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">📎 View Certificate</a>
+          <a href="https://khushi-singh-dev.github.io/MahaTour/" target="_blank" rel="noopener noreferrer">📎 View Project</a>
         </div>
-        <div class="project-card">
-            <img src="images/calcProject.jpg" alt="Calculator Website">
-            <h3>Calculator Website</h3>
-            <p>Interactive Calculator Website built using HTML, CSS & JS.</p>
-            <a href="https://github.com/khushi-singh-dev/Calculator-Website" target="_blank">View on GitHub</a>
-            <a href="https://Khushi-singh-dev.github.io/Calculator-Website/" 
-           target="_blank" 
-           class="btn">
-           Live Demo
-        </a>
-        </div>
-        <div class="project-card">
-            <img src="images/random-quote-gen.jpg" alt="Random Quote Generator">
-            <h3>Random Quote Generator</h3>
-            <p>Interactive Random Quote Generator built using HTML, CSS & JS (API Integration).</p>
-            <a href="https://github.com/khushi-singh-dev/random-quote-generator" target="_blank">View on GitHub</a>
-            <a href="https://Khushi-singh-dev.github.io/random-quote-generator/" 
-           target="_blank" 
-           class="btn">
-           Live Demo
-        </a>
-        </div>
-        <div class="project-card">
-            <img src="images/TodoList.jpg" alt="Todo List">
-            <h3>Todo List</h3>
-            <p>Interactive Todo List built using HTML, CSS & JS.</p>
-            <a href="https://github.com/khushi-singh-dev/Todo-list-app" target="_blank">View on GitHub</a>
-            <a href="https://Khushi-singh-dev.github.io/Todo-list-app/" 
-           target="_blank" 
-           class="btn">
-           Live Demo
-        </a>
-        </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section id="achievements" class="achievements">
-    <h2>🏆 Achievements</h2>
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact Me</h2>
+      <p>I'd love to connect with you! Fill out the form below or reach me through my socials.</p>
 
-<div class="achievement-card">
+      <form id="contactForm" class="contact-form" novalidate>
+        <label class="visually-hidden" for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-  <div class="achievement-top">
-    <h3>🥇 1st Rank – Web Designing Competition</h3>
-  </div>
+        <label class="visually-hidden" for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
 
-  <div class="achievement-info">
-    📍 St. John College of Humanities & Sciences <br>
-    📅 February 2026
-  </div>
+        <label class="visually-hidden" for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
 
-  <ul class="achievement-points">
-    <li>✔ Designed a responsive and visually appealing website</li>
-    <li>✔ Focused on UI design, layout structure & user experience</li>
-  </ul>
-
-  <div class="achievement-buttons">
-    <a href="https://drive.google.com/file/d/1MjhwXmWaeTkrzqZ2K9Q-5sk_XD9NLkfU/view?usp=drive_link" target="_blank">📎 View Certificate</a>
-    <a href="https://khushi-singh-dev.github.io/MahaTour/" target="_blank">📎 View Project</a>
-  </div>
-
-</div>
-
-</section>
-
-
-<section id="Contact">
-    <h2>Contact Me</h2>
-    <p>I'd love to connect with you! Fill out the form below or reach me through my socials.</p>
-
-    <form id="contactForm">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
         <button type="submit">Send Message</button>
-    </form>
+      </form>
 
-    <div class="socials">
-        <a href="https://github.com/khushi-singh-dev" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/khushi-singh-68294028b" target="_blank">LinkedIn</a>
+      <div class="socials" aria-label="Social links">
+        <a href="https://github.com/Khushi-singh-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/khushi-singh-68294028b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:Khushisatishsingh211@gmail.com">Email</a>
-    </div>
-</section>
+      </div>
+    </section>
+  </main>
 
-<footer>
+  <footer>
     <p>&copy; 2026 Khushi Singh. All rights reserved.</p>
-</footer>
+  </footer>
 
-<div class="signup-modal" id="signupModal">
-  <div class="signup-content">
-    <h2>Sign Up</h2>
-    <form id="signupForm">
-      <input type="text" placeholder="Enter your name" required>
-      <input type="email" placeholder="Enter your email" required>
-      <input type="password" placeholder="Enter your password" required>
-      <button type="submit">Sign Up</button>
-    </form>
-    <button id="closeModal">Close</button>
+  <!-- Sign-up modal (accessible) -->
+  <div class="signup-modal" id="signupModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="signup-title">
+    <div class="signup-content">
+      <h2 id="signup-title">Sign Up</h2>
+      <form id="signupForm" class="signup-form" novalidate>
+        <label class="visually-hidden" for="signup-name">Name</label>
+        <input id="signup-name" name="signup-name" type="text" placeholder="Enter your name" required>
+
+        <label class="visually-hidden" for="signup-email">Email</label>
+        <input id="signup-email" name="signup-email" type="email" placeholder="Enter your email" required>
+
+        <label class="visually-hidden" for="signup-password">Password</label>
+        <input id="signup-password" name="signup-password" type="password" placeholder="Enter your password" required>
+
+        <button type="submit">Sign Up</button>
+      </form>
+      <button id="closeModal" aria-label="Close sign up dialog">Close</button>
+    </div>
   </div>
-</div>
 
-<script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
