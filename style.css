@@ -351,7 +351,9 @@ footer { background-color: #000; color: #888; text-align: center; padding: 20px;
   }
 
   .nav-actions {
-    display: none;
+    display: flex;
+    order: 3;
+    margin-left: 10px;
   }
 
   .achievement-card { padding: 20px; }
