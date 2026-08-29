@@ -10,12 +10,14 @@ body {
   background-color: #f5f5f5;
   color: #333;
   font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 header {
   background-color: #222;
   color: white;
-  padding: 15px 40px;
+  padding: 12px 20px;
   position: fixed;
   width: 100%;
   z-index: 1000;
@@ -24,6 +26,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
 }
 nav p {
   font-size: 22px;
@@ -34,11 +39,15 @@ nav ul {
   display: flex;
   gap: 30px;
 }
+nav li {
+  /* make the full nav row clickable by letting the anchor fill the li */
+}
 nav a {
   color: white;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s;
+  display: inline-block; /* will be overridden on small screens */
 }
 nav a:hover {
   color: #2575fc;
@@ -79,7 +88,7 @@ section {
   font-size: 2rem;
 }
 
-#Home {
+#home {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,26 +116,46 @@ section {
   font-size: 1.1rem;
   color: #808080;
 }
+
+/* Button system */
 .btn {
-  display: inline-block;
-  margin-top: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: 3px solid rgba(37,117,252,0.18);
+  outline-offset: 3px;
+}
+
+.btn.primary,
+button.btn.primary {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;
-  padding: 10px 25px;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.btn:hover {
-  transform: scale(1.03);
 }
 
-.btn:active{
-  transform: scale(0.9);
+.btn.btn-outline,
+button.btn.btn-outline {
+  background: transparent;
+  color: #2575fc;
+  border: 2px solid rgba(37,117,252,0.12);
 }
+
+.btn.primary:hover { transform: translateY(-3px); }
+.btn.btn-outline:hover { transform: translateY(-2px); background: rgba(37,117,252,0.04); }
 
 /* -------- ABOUT -------- */
-#About {
+#about {
   padding: 80px 10%;
   background-color: #fdfdfd;
   color: #333;
@@ -167,17 +196,15 @@ section {
   transition: 0.3s;
   margin-top: 10px;
 }
-.about-text button:hover {
-  transform: scale(1.1);
-}
+.about-text button:hover { transform: scale(1.05); }
 
 /* -------- SKILLS -------- */
-#Skills {
+#skills {
   background-color: #f5f5f5;
   padding: 80px 10%;
   text-align: center;
 }
-#Skills h2 {
+#skills h2 {
   font-size: 2.5rem;
   color: #008ecb;
   margin-bottom: 50px;
@@ -191,396 +218,103 @@ section {
 .skill {
   margin-bottom: 40px;
 }
-.skill p {
-  font-weight: 600;
-  margin-bottom: 20px;
-}
+.skill p { font-weight: 600; margin-bottom: 20px; }
 .progress-bar {
-  width: 100%;
-  background-color: #ffffff;
-  height: 10px;
-  border-radius: 5px;
-  overflow: hidden;
+  width: 100%; background-color: #ffffff; height: 10px; border-radius: 5px; overflow: hidden;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.29);
 }
-.progress {
-  height: 100%;
-  width: 0%;
-  border-radius: 5px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.29);
-  animation: fill 1.2s forwards;
-}
-.progress.html {
-  width: 90%;
-  background-color: #f77e14;
-}
-.progress.css {
-  width: 89%;
-  background-color: #ff007b;
-}
-.progress.js {
-  width: 80%;
-  background-color: #ffdf0c;
-}
-.progress.react {
-  width: 80%;
-  background-color: #0ecbff;
-}
-.progress.java {
-  width: 70%;
-  background-color: #82ee0e;
-}
-.progress.springboot {
-  width: 25%;
-  background-color: #0077ff;
-}
-.progress.gitandgithub {
-  width: 60%;
-  background-color: #333;
-}
-.progress.mysql {
-  width: 85%;
-  background-color: #ff2727;
-}
-.progress.bootstrap {
-  width: 75%;
-  background-color: #6500fc;
-}
-.progress.python {
-  width: 70%;
-  background-color: #09ff00;
-}
-.progress.django {
-  width: 70%;
-  background-color: #09ff00;
-}
+.progress { height: 100%; width: 0%; border-radius: 5px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.29); animation: fill 1.2s forwards; }
+.progress.html { width: 90%; background-color: #f77e14; }
+.progress.css { width: 89%; background-color: #ff007b; }
+.progress.js { width: 80%; background-color: #ffdf0c; }
+.progress.react { width: 80%; background-color: #0ecbff; }
+.progress.java { width: 70%; background-color: #82ee0e; }
+.progress.springboot { width: 25%; background-color: #0077ff; }
+.progress.gitandgithub { width: 60%; background-color: #333; }
+.progress.mysql { width: 85%; background-color: #ff2727; }
+.progress.bootstrap { width: 75%; background-color: #6500fc; }
+.progress.python { width: 70%; background-color: #09ff00; }
 
-@keyframes fill {
-  from {
-    width: 0;
-  }
-  to {
-    max-width: 100%;
-  }
-}
+@keyframes fill { from { width: 0; } to { max-width: 100%; } }
 
 /* -------- PROJECTS -------- */
-#Projects {
+#projects {
   padding: 80px 10%;
   background-color: #fff;
   text-align: center;
 }
-#Projects h2 {
-  font-size: 2.5rem;
-  color: #009ed3;
-  margin-bottom: 50px;
-  padding-right: 20px;
-  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.33);
-}
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 30px;
-}
-.project-card {
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
-}
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-.project-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 25px;
-}
-.project-card h3 {
-  color: #333;
-  margin-bottom: 10px;
-}
-.project-card p {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 15px;
-}
-.project-card a {
-  text-decoration: none;
-  background-color: #007bff;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 6px;
-  transition: background-color 0.3s;
-}
-.project-card a:hover {
-  background-color: #0094d4;
-}
+#projects h2 { font-size: 2.5rem; color: #009ed3; margin-bottom: 50px; padding-right: 20px; text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.33); }
+.projects-container { display: grid; grid-template-columns: repeat(1, 1fr); gap: 30px; }
+.project-card { background-color: #f9f9f9; border-radius: 12px; padding: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s, box-shadow 0.3s; }
+.project-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); }
+.project-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: 18px; }
+.project-card h3 { color: #333; margin-bottom: 8px; }
+.project-card p { font-size: 0.95rem; color: #555; margin-bottom: 12px; }
+
+.project-buttons { display: flex; gap: 12px; justify-content: center; align-items: center; margin-top: 8px; }
+.project-buttons .btn { padding: 8px 14px; border-radius: 8px; }
+
 /* achievements */
-
-#achievements {
-  padding: 80px 20px;
-  background: linear-gradient(to right, #f5f7ff, #eef1ff);
-  text-align: center;
-}
-
-#achievements h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #009ed3;
-}
-
-.achievement-card {
-  max-width: 850px;
-  margin: auto;
-  background: white;
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-
-.achievement-card:hover {
-  transform: translateY(-8px);
-}
-
-.achievement-top h3 {
-  font-size: 1.6rem;
-  color: #5b3df5;
-  margin-bottom: 10px;
-}
-
-.achievement-info {
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.achievement-points {
-  text-align: left;
-  margin: 20px auto;
-  max-width: 500px;
-}
-
-.achievement-points li {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-.achievement-buttons {
-  margin-top: 20px;
-}
-
-.achievement-buttons a {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: white;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.achievement-buttons a:hover {
-  transform: scale(1.05);
-}
+#achievements { padding: 80px 20px; background: linear-gradient(to right, #f5f7ff, #eef1ff); text-align: center; }
+#achievements h2 { font-size: 2.5rem; margin-bottom: 40px; color: #009ed3; }
+.achievement-card { max-width: 850px; margin: auto; background: white; border-radius: 20px; padding: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: 0.3s; }
+.achievement-card:hover { transform: translateY(-8px); }
+.achievement-top h3 { font-size: 1.6rem; color: #5b3df5; margin-bottom: 10px; }
+.achievement-info { color: #666; margin-bottom: 20px; }
+.achievement-points { text-align: left; margin: 20px auto; max-width: 500px; }
+.achievement-points li { margin-bottom: 10px; font-size: 1rem; }
+.achievement-buttons { margin-top: 20px; }
+.achievement-buttons a { display: inline-block; margin: 10px; padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: 500; transition: 0.3s; }
+.achievement-buttons .btn.primary { border-radius: 30px; }
+.achievement-buttons .btn.btn-outline { border-radius: 30px; }
 
 /* -------- CONTACT -------- */
-#Contact {
-  background: linear-gradient(135deg, #1a1a1a, #000);
-  color: #fff;
-  padding: 100px 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-#Contact h2 {
-  font-size: 2.5rem;
-  color: #42c9ff;
-  margin-bottom: 15px;
-  text-shadow: 2px 5px 8px rgba(0, 16, 26, 0.58);
-}
-#Contact p {
-  color: #ccc;
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto 25px;
-  line-height: 1.6;
-}
-#Contact form {
-  background: rgba(101, 101, 101, 0.1);
-  backdrop-filter: blur(12px);
-  border-radius: 12px;
-  padding: 30px;
-  max-width: 400px;
-  margin: 0 auto 20px;
-  border: 1px solid #0d0d0d;
-}
-#Contact input,
-#Contact textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-  font-size: 1rem;
-}
-#Contact input::placeholder,
-#Contact textarea::placeholder {
-  color: #bbb;
-}
-#Contact button {
-  background-color: #0098d4;
-  color: white;
-  padding: 12px 18px;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-#Contact button:hover {
-  background-color: #5fbcff;
-  transform: scale(1.05);
-}
+#contact { background: linear-gradient(135deg, #1a1a1a, #000); color: #fff; padding: 100px 20px; text-align: center; display: flex; flex-direction: column; }
+#contact h2 { font-size: 2.5rem; color: #42c9ff; margin-bottom: 15px; text-shadow: 2px 5px 8px rgba(0, 16, 26, 0.58); }
+#contact p { color: #ccc; font-size: 1.1rem; max-width: 600px; margin: 0 auto 25px; line-height: 1.6; }
+#contact form { background: rgba(255,255,255,0.03); backdrop-filter: blur(6px); border-radius: 12px; padding: 24px; max-width: 520px; margin: 0 auto 20px; border: 1px solid rgba(255,255,255,0.05); }
+#contact input, #contact textarea { width: 100%; padding: 12px; margin: 10px 0; border: none; border-radius: 8px; background: rgba(255,255,255,0.06); color: white; font-size: 1rem; }
+#contact input::placeholder, #contact textarea::placeholder { color: #bbb; }
+#contact button, #contact .btn.primary { background-color: #0098d4; color: white; padding: 12px 18px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+#contact button:hover { background-color: #5fbcff; transform: scale(1.02); }
 
 /* -------- SOCIAL LINKS -------- */
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 30px;
-}
-.socials a {
-  color: #4bdbff;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.socials a:hover {
-  color: #fff;
-  text-shadow: 0 0 8px #38e6fd;
-  transform: translateY(-3px);
-}
+.socials { display: flex; justify-content: center; gap: 25px; margin-top: 30px; }
+.socials a { color: #4bdbff; font-weight: bold; text-decoration: none; transition: color 0.3s ease; }
+.socials a:hover { color: #fff; text-shadow: 0 0 8px #38e6fd; transform: translateY(-3px); }
 
 /* -------- FOOTER -------- */
-footer {
-  background-color: #000;
-  color: #888;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-}
+footer { background-color: #000; color: #888; text-align: center; padding: 20px; font-size: 0.9rem; letter-spacing: 0.5px; }
 
 /* -------- SIGNUP MODAL -------- */
-.signup-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  align-items: center;
-  z-index: 1500;
-}
-.signup-content {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  width: 320px;
-  height: 360px;
-  text-align: center;
-}
-.signup-content input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: 1px solid #9a9999;
-}
-.signup-content button {
-  background-color: #0096bf;
-  color: white;
-  width: 100%;
-  border: none;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-.signup-content button:hover {
-  background-color: #75cfff;
-}
+.signup-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); justify-content: center; align-items: center; z-index: 1500; }
+.signup-content { background: white; padding: 30px; border-radius: 10px; width: 320px; height: auto; text-align: center; }
+.signup-content input { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #9a9999; }
+.signup-content button { background-color: #0096bf; color: white; width: 100%; border: none; padding: 10px; margin: 10px 0; border-radius: 6px; cursor: pointer; transition: background 0.3s ease; }
+.signup-content button:hover { background-color: #75cfff; }
 
 /* ===================== MOBILE RESPONSIVE ===================== */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
-    font-size: 2rem;
+    font-size: 1.9rem;
     cursor: pointer;
-    z-index: 1001;
-    position: fixed;
-    top: -4px;
-    left: 300px;
+    z-index: 1101;
+    position: absolute;
+    top: 10px;
+    right: 18px;
     color: #fff;
-    background: #222;
-    padding: 8px 12px;
+    background: transparent;
+    padding: 8px 10px;
     border-radius: 6px;
-  }
-  .menu-icon.open::after {
-    content: "";
-  }
-  .menu-icon::after {
-    content: "";
-  }
-  .achievement-card {
-    padding: 20px;
-  }
-
-  .achievements h2 {
-    font-size: 2rem;
-  }
-
-  .achievement-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .buttons a {
-    display: block;
-    margin: 8px auto;
-    width: 80%;
-  }
-  #signupBtn {
-    background: linear-gradient(135deg, #00d0ff, #0077ff);
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
     border: none;
-    padding: 10px 20px;
-    margin: 10px 20px 10px 0px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 123, 225, 0.4);
   }
-  #signupBtn:hover{
-    background: linear-gradient(135deg, #0077ff, #00d0ff);
-    box-shadow: 0 6px 16px rgba(0, 123, 225, 0.6);
-    transform: scale(1.1);
-  }
+
+  .achievement-card { padding: 20px; }
+  .achievements h2 { font-size: 2rem; }
+  .achievement-card h3 { font-size: 1.2rem; }
+
+  /* mobile nav menu - full screen drawer */
   .nav-links {
     position: fixed;
     left: -100%;
@@ -589,56 +323,43 @@ footer {
     width: 100%;
     background: #222;
     flex-direction: column;
-    padding-top: 60px;
-    transition: 0.3s;
-    gap: 30px;
+    padding-top: 80px;
+    transition: left 0.28s ease;
+    gap: 16px;
+    z-index: 1100;
   }
-  .nav-links.active {
-    left: 0;
-  }
+  .nav-links.active { left: 0; }
 
-  nav ul {
-    flex-direction: column;
-    text-align: left;
-    padding-left: 20px;
-  }
-  nav a {
-    font-size: 1.2rem;
-  }
-  nav a:active{
-    color: #21b1ff;
-  }
-  #Skills{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 700px;
-    margin: 0 auto;
-  }
+  nav ul { flex-direction: column; text-align: left; padding-left: 20px; }
+  /* Make each nav link fill the row so taps anywhere on the row work */
+  nav li a { display: block; padding: 12px 18px; }
+  nav a { font-size: 1.1rem; }
 
-  #Projects{
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    align-items: center;
-  }
+  #skills{ display: flex; flex-direction: column; gap: 20px; max-width: 700px; margin: 0 auto; }
+  #projects{ display: flex; flex-direction: column; gap: 25px; align-items: center; }
 
-  .about-container,
-  .projects-container,
-  .achievements {
-    flex-direction: column;
-    align-items: center;
-  }
-  .project-card {
-    width: 95%;
-  }
+  .about-container, .projects-container, .achievements { flex-direction: column; align-items: center; }
+  .project-card { width: 95%; }
+  .project-buttons { flex-direction: column; }
+  .project-buttons .btn { width: 100%; }
 
-  section {
-    font-size: 1.5rem;
-  }
-
-  #Contact form {
-    width: 95%;
-    padding: 20px;
-  }
+  section { font-size: 1.5rem; }
+  #contact form { width: 95%; padding: 20px; }
 }
+
+/* Tablet / Desktop grid for projects */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .projects-container { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .projects-container { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Desktop nav make anchors fill list items so clicks anywhere work */
+@media (min-width: 769px) {
+  nav li a { display: block; padding: 8px 10px; }
+}
+
+/* small accessibility focus helper */
+:focus { outline: none; }
+:focus-visible { outline: 3px solid rgba(37,117,252,0.22); outline-offset: 2px; }
