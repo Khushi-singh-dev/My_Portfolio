@@ -55,15 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /**
-   * Smooth scroll to element with offset
+   * Smooth scroll to element
    */
-  function smoothScrollTo(element, offset = 80) {
+  function smoothScrollTo(element) {
     if (element) {
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({
-        top: elementPosition - offset,
-        behavior: "smooth",
-      });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   }
 
@@ -141,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (isVisible && !hasAnimated) {
         progressBars.forEach((bar) => {
-          bar.style.animation = "fill 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards";
+          bar.style.animation = "fill 1.2s forwards";
         });
         hasAnimated = true;
         window.removeEventListener("scroll", animateSkills);
@@ -246,53 +242,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ====== INTERSECTION OBSERVER FOR ANIMATIONS ======
-  if ("IntersectionObserver" in window) {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.animationPlayState = "running";
-        }
-      });
-    }, observerOptions);
-
-    // Observe skill items
-    document.querySelectorAll(".skill").forEach((skill) => {
-      observer.observe(skill);
-    });
-
-    // Observe project cards
-    document.querySelectorAll(".project-card").forEach((card) => {
-      card.style.opacity = "0";
-      card.style.animation = "fadeInUp 0.6s ease-out forwards";
-      observer.observe(card);
-    });
-  }
-
   console.log("✨ Portfolio initialized successfully!");
 });
-
-// ====== ADD ANIMATION STYLES DYNAMICALLY ======
-const style = document.createElement("style");
-style.textContent = `
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  img.loaded {
-    animation: fadeInUp 0.6s ease-out;
-  }
-`;
-document.head.appendChild(style);
