@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Khushi Singh — Portfolio</title>
   <meta name="description" content="Khushi Singh — Frontend Developer. Portfolio showcasing projects, skills and contact information.">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#6a11cb">
   <link rel="icon" href="images/bg.png" type="image/png">
   <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
@@ -19,8 +19,16 @@
 <body>
   <header>
     <nav role="navigation" aria-label="Main navigation">
-      <p class="brand">Khushi's Portfolio</p>
+      <!-- Logo Section -->
+      <a href="#home" class="nav-logo" aria-label="Khushi Singh Portfolio - Go to Home">
+        <div class="nav-logo-icon">KS</div>
+        <div class="nav-logo-text">
+          <div class="nav-logo-main">Khushi Singh</div>
+          <div class="nav-logo-sub">Developer</div>
+        </div>
+      </a>
 
+      <!-- Navigation Links -->
       <ul id="primary-navigation" class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -30,15 +38,18 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
 
+      <!-- Signup Button -->
       <div class="nav-actions">
         <button id="signupBtn" aria-haspopup="dialog">Sign Up</button>
       </div>
       
+      <!-- Mobile Menu Icon -->
       <button class="menu-icon" aria-expanded="false" aria-controls="primary-navigation" title="Toggle menu">☰</button>
     </nav>
   </header>
 
   <main id="main" tabindex="-1">
+    <!-- HOME SECTION -->
     <section id="home" aria-labelledby="home-heading">
       <div class="home-content">
         <h1 id="home-heading">Hi, I'm <span class="highlight">Khushi Singh</span></h1>
@@ -48,6 +59,7 @@
       </div>
     </section>
 
+    <!-- ABOUT SECTION -->
     <section id="about" aria-labelledby="about-heading">
       <div class="about-container">
         <figure class="about-img">
@@ -63,57 +75,59 @@
       </div>
     </section>
 
+    <!-- SKILLS SECTION -->
     <section id="skills" aria-labelledby="skills-heading">
       <h2 id="skills-heading">My Skills</h2>
       <div class="skills-container" role="list">
         <!-- Each skill is marked up for accessibility -->
         <div class="skill" role="listitem" aria-label="HTML skill level">
-          <p>HTML</p>
+          <p>HTML <span>90%</span></p>
           <div class="progress-bar" aria-hidden="true"><div class="progress html"></div></div>
         </div>
         <div class="skill" role="listitem" aria-label="CSS skill level">
-          <p>CSS</p>
+          <p>CSS <span>89%</span></p>
           <div class="progress-bar" aria-hidden="true"><div class="progress css"></div></div>
         </div>
         <div class="skill" role="listitem" aria-label="JavaScript skill level">
-          <p>JavaScript</p>
+          <p>JavaScript <span>80%</span></p>
           <div class="progress-bar" aria-hidden="true"><div class="progress js"></div></div>
         </div>
         <div class="skill" role="listitem" aria-label="React skill level">
-          <p>React</p>
+          <p>React <span>80%</span></p>
           <div class="progress-bar" aria-hidden="true"><div class="progress react"></div></div>
         </div>
         <div class="skill" role="listitem" aria-label="Java skill level">
-          <p>Java</p>
+          <p>Java <span>70%</span></p>
           <div class="progress-bar" aria-hidden="true"><div class="progress java"></div></div>
         </div>
         <div class="skill" role="listitem" aria-label="Spring Boot skill level">
-          <p>Spring Boot</p>
+          <p>Spring Boot <span>65%</span></p>
           <div class="progress-bar" aria-hidden="true"><div class="progress springboot"></div></div>
         </div>
         <div class="skill" role="listitem" aria-label="Django skill level">
-          <p>Django</p>
+          <p>Django <span>60%</span></p>
           <div class="progress-bar" aria-hidden="true"><div class="progress django"></div></div>
         </div>
         <div class="skill" role="listitem" aria-label="Git and GitHub skill level">
-          <p>Git &amp; GitHub</p>
+          <p>Git &amp; GitHub <span>60%</span></p>
           <div class="progress-bar" aria-hidden="true"><div class="progress gitandgithub"></div></div>
         </div>
         <div class="skill" role="listitem" aria-label="MySQL skill level">
-          <p>MySQL</p>
+          <p>MySQL <span>85%</span></p>
           <div class="progress-bar" aria-hidden="true"><div class="progress mysql"></div></div>
         </div>
         <div class="skill" role="listitem" aria-label="Bootstrap skill level">
-          <p>Bootstrap</p>
+          <p>Bootstrap <span>75%</span></p>
           <div class="progress-bar" aria-hidden="true"><div class="progress bootstrap"></div></div>
         </div>
         <div class="skill" role="listitem" aria-label="Python skill level">
-          <p>Python</p>
+          <p>Python <span>70%</span></p>
           <div class="progress-bar" aria-hidden="true"><div class="progress python"></div></div>
         </div>
       </div>
     </section>
 
+    <!-- PROJECTS SECTION -->
     <section id="projects" aria-labelledby="projects-heading">
       <h2 id="projects-heading">My Projects</h2>
       <div class="projects-container">
@@ -160,6 +174,7 @@
       </div>
     </section>
 
+    <!-- ACHIEVEMENTS SECTION -->
     <section id="achievements" class="achievements" aria-labelledby="achievements-heading">
       <h2 id="achievements-heading">🏆 Achievements</h2>
 
@@ -185,6 +200,7 @@
       </div>
     </section>
 
+    <!-- CONTACT SECTION -->
     <section id="contact" aria-labelledby="contact-heading">
       <h2 id="contact-heading">Contact Me</h2>
       <p>I'd love to connect with you! Fill out the form below or reach me through my socials.</p>
@@ -210,6 +226,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2026 Khushi Singh. All rights reserved.</p>
   </footer>
