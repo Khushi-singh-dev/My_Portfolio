@@ -153,47 +153,21 @@ document.addEventListener("DOMContentLoaded", () => {
     animateSkills();
   }
 
-  // ====== TYPING EFFECT ======
+  // ====== TYPING EFFECT - SIMPLE VERSION ======
   const typingEl = document.querySelector(".typing-text");
   if (typingEl) {
-    const textArray = [
-      "Frontend Developer",
-      "Web Designer",
-      "UI/UX Enthusiast",
-      "Full Stack Learner",
-    ];
-    let textIndex = 0;
-    let charIndex = 0;
+    const text = "Frontend Developer";
+    let i = 0;
     const speed = 100;
-    const delay = 2000;
-
+    
     function typeWriter() {
-      const currentText = textArray[textIndex];
-
-      if (charIndex < currentText.length) {
-        typingEl.textContent += currentText.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeWriter, speed);
-      } else {
-        // Pause before erasing
-        setTimeout(eraseWriter, delay);
-      }
-    }
-
-    function eraseWriter() {
-      const currentText = textArray[textIndex];
-
-      if (charIndex > 0) {
-        typingEl.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(eraseWriter, speed / 2);
-      } else {
-        // Move to next text
-        textIndex = (textIndex + 1) % textArray.length;
+      if (i < text.length) {
+        typingEl.textContent += text.charAt(i);
+        i++;
         setTimeout(typeWriter, speed);
       }
     }
-
+    
     typeWriter();
   }
 
@@ -241,69 +215,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     signupForm.addEventListener("submit", (e) => {
       e.preventDefault();
-
-      // Get form data
-      const name = document.getElementById("signup-name")?.value || "";
-      const email = document.getElementById("signup-email")?.value || "";
-
-      if (name && email) {
-        // Show success message
-        showNotification(`Welcome, ${name}! 🎉 Check your email at ${email}`);
-
-        closeSignupModal();
-      } else {
-        showNotification("Please fill in all fields", "error");
-      }
+      alert("Sign Up Successful! 🎉");
+      closeSignupModal();
     });
   }
 
-  // ====== CONTACT FORM ======
+  // ====== CONTACT FORM - SIMPLE VERSION ======
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
-
-      const name = document.getElementById("name")?.value || "";
-      const email = document.getElementById("email")?.value || "";
-      const message = document.getElementById("message")?.value || "";
-
-      if (name && email && message) {
-        showNotification(
-          `Thank you, ${name}! Your message has been sent. I'll get back to you soon! 📧`
-        );
-        contactForm.reset();
-      } else {
-        showNotification("Please fill in all fields", "error");
-      }
+      alert("Message Sent Successfully!");
+      contactForm.reset();
     });
-  }
-
-  // ====== NOTIFICATION SYSTEM ======
-  function showNotification(message, type = "success") {
-    const notification = document.createElement("div");
-    notification.className = `notification notification-${type}`;
-    notification.style.cssText = `
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: ${type === "success" ? "#10b981" : "#ef4444"};
-      color: white;
-      padding: 16px 24px;
-      border-radius: 8px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      z-index: 2000;
-      animation: slideInRight 0.3s ease-out;
-      max-width: 90vw;
-      font-weight: 600;
-    `;
-    notification.textContent = message;
-
-    document.body.appendChild(notification);
-
-    // Auto remove after 4 seconds
-    setTimeout(() => {
-      notification.style.animation = "slideOutRight 0.3s ease-out";
-      setTimeout(() => notification.remove(), 300);
-    }, 4000);
   }
 
   // ====== CLOSE MENU ON OUTSIDE CLICK ======
@@ -351,131 +274,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ====== SCROLL PROGRESS INDICATOR ======
-  const scrollProgress = () => {
-    const winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    const height =
-      document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
-
-    // You can add a progress bar element to show this
-    document.documentElement.style.setProperty(
-      "--scroll-progress",
-      `${scrolled}%`
-    );
-  };
-
-  window.addEventListener("scroll", scrollProgress);
-
-  // ====== HEADER SCROLL EFFECT ======
-  let lastScrollTop = 0;
-  const header = document.querySelector("header");
-
-  window.addEventListener("scroll", () => {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > 100) {
-      header?.style.setProperty("box-shadow", "0 4px 20px rgba(0, 0, 0, 0.15)");
-    } else {
-      header?.style.setProperty(
-        "box-shadow",
-        "0 2px 10px rgba(0, 0, 0, 0.1)"
-      );
-    }
-
-    lastScrollTop = scrollTop;
-  });
-
-  // ====== FORM VALIDATION ======
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  };
-
-  // Add real-time validation to email inputs
-  document.querySelectorAll('input[type="email"]').forEach((input) => {
-    input.addEventListener("blur", () => {
-      if (input.value && !validateEmail(input.value)) {
-        input.style.borderColor = "#ef4444";
-      } else {
-        input.style.borderColor = "";
-      }
-    });
-  });
-
-  // ====== DYNAMIC TITLE UPDATE ======
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      document.title = "Come back! 👋 - Khushi Singh Portfolio";
-    } else {
-      document.title = "Khushi Singh — Portfolio";
-    }
-  });
-
-  // ====== LAZY LOAD IMAGES ======
-  if ("IntersectionObserver" in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src || img.src;
-          img.classList.add("loaded");
-          observer.unobserve(img);
-        }
-      });
-    });
-
-    document.querySelectorAll("img[data-src]").forEach((img) => {
-      imageObserver.observe(img);
-    });
-  }
-
-  // ====== PERFORMANCE MONITORING ======
-  if ("PerformanceObserver" in window) {
-    try {
-      const observer = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-          if (entry.duration > 3000) {
-            console.warn("Slow interaction detected:", entry.name);
-          }
-        }
-      });
-
-      observer.observe({ entryTypes: ["longtask", "navigation"] });
-    } catch (e) {
-      // Performance observer not supported
-    }
-  }
-
   console.log("✨ Portfolio initialized successfully!");
 });
 
 // ====== ADD ANIMATION STYLES DYNAMICALLY ======
 const style = document.createElement("style");
 style.textContent = `
-  @keyframes slideInRight {
-    from {
-      opacity: 0;
-      transform: translateX(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slideOutRight {
-    from {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    to {
-      opacity: 0;
-      transform: translateX(30px);
-    }
-  }
-
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -489,10 +293,6 @@ style.textContent = `
 
   img.loaded {
     animation: fadeInUp 0.6s ease-out;
-  }
-
-  .notification {
-    animation: slideInRight 0.3s ease-out !important;
   }
 `;
 document.head.appendChild(style);
